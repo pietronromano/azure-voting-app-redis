@@ -46,3 +46,5 @@ jobs:
              azure-vote-all-in-one-redis.yaml
           images: '${{ secrets.registry }}.azurecr.io/${{ secrets.repository }}/azure-vote-front:${{ github.sha }}'
           pull-images: false 
+      - name: Get Pods
+        run: kubectl get pod | grep vote
